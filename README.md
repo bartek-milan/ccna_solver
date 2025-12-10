@@ -1,58 +1,79 @@
 # CCNA Solver
 
-A browser-assisted tool that quickly finds answers to CCNA practice questions using OCR and automated searches.  
-Built for efficiency and designed to minimize tedious manual lookup.  
-Hated by Markovich since 2025.  
+A fully automated tool that **reads CCNA questions from your screen, searches for answers online, and clicks the correct choices for you.**  
+Powered by OCR, a headless browser, and precise on-screen text matching.  
+Still hated by Markovich since 2025.
 
 ---
 
 ## Features
 
-- **OCR-based screen capture**: Detects questions from your test window.  
-- **Automated search**: Queries DuckDuckGo for the top result from `itexamanswers.net`.  
-- **On-screen overlays**: Highlights the correct answers with small, semi-transparent dots.  
-- **Hotkey-driven workflow**: Simple keypresses to trigger search, display answers, or quit instantly.  
+- **Automatic OCR question detection**  
+  Reads the question directly from your screen (even partial or fuzzy text).
 
-> ⚠️ Note: Image-based exercises are currently **not supported**.
+- **Headless browser search**  
+  Searches DuckDuckGo invisibly in the background and opens the matching `itexamanswers.net` page.
+
+- **Robust answer extraction**  
+  Identifies correct answers even if the site layout shifts or formatting changes.
+
+- **Safe, accurate clicking**  
+  Clicks only inside the **actual question area**, avoiding the sidebar and other UI elements.
+
+- **Hotkey-driven automation**  
+  Press a key → the tool runs OCR → searches → extracts → finds → and clicks the correct answers.
+
+- **Built-in cooldown**  
+  Prevents repeated activation until the solver has completed a run.
+
+> ⚠️ Image-based questions are **not supported**.
 
 ---
 
 ## Usage
 
-1. Open your CCNA test or exercise on your screen.  
-2. Run the `ccna_solver.exe`.  
-3. Use the hotkeys to interact with the program:  
+1. Open your CCNA test window on screen.  
+2. Run `ccna_solver.exe` as administrator.  
+3. Use the hotkey to trigger the solver:
 
-   **Recommended workflow**:  
-   1. **NUM 1** → Search for the answer  
-   2. **NUM 2** → Show the correct answers on-screen  
+   **Primary workflow:**  
+   - **NUMPAD 1** → Run the full pipeline  
+     - Capture screen  
+     - OCR the question  
+     - Search online  
+     - Extract correct answers  
+     - Locate them on your screen  
+     - Click them automatically  
 
-4. The software runs mostly invisibly; the only visible indicators are the small overlay dots marking answers.  
+4. The process runs headlessly and quietly — no browser window appears.  
+5. A 2-second cooldown prevents accidental double triggers.
 
 ---
 
 ## Hotkeys
 
-| Key       | Action                                        |
-|-----------|-----------------------------------------------|
-| **NUM 1** | Capture screen, run OCR, and search answers |
-| **NUM 2** | Show/hide answer overlays on-screen         |
-| **NUM 9** | Quit the program immediately                 |
+| Key          | Action                                                   |
+|--------------|-----------------------------------------------------------|
+| **NUMPAD 1** | Run OCR → search → extract answers → auto-click them     |
+| **NUMPAD 9** | Quit the program                                         |
 
 ---
 
 ## Notes
 
-- The program is designed for Windows and requires **Administrator privileges** to register global hotkeys.  
-- Works best on standard screen resolutions (1920×1080).  
-- Overlay dots are intentionally subtle to avoid obstructing your view.  
+- Must be run with **Administrator privileges** to enable global input control and off-focus clicking.  
+- Designed for Windows; tested on 1920×1080.  
+- Uses `pydirectinput` (or pyautogui if configured) to allow clicking even when the console is out of view.  
+- Does **not** click sidebar results or unrelated UI elements — only the true answer region.
 
 ---
 
 ## Legacy
 
-- Built to simplify and speed up tedious CCNA assignments.  
+Created to eliminate endless CCNA busywork and provide fast, reliable practice automation.
+
 ---
+
 ## Disclaimer
 
-This tool is intended for personal practice and learning purposes. Use responsibly.
+This tool is intended for personal learning and study assistance. Use responsibly.
