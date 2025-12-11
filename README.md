@@ -1,51 +1,37 @@
-# CCNA Solver
+# Online/Offline CCNA Solver
 
-A fully automated tool that **reads CCNA questions from your screen, searches for answers online, and clicks the correct choices for you.**  
-Powered by OCR, a headless browser, and precise on-screen text matching.  
+A lightweight tool that **reads CCNA questions from your screen, searches for answers online, and clicks the correct choices automatically.**  
+Powered by OCR, a headless browser, and fast on-screen text matching.
 
 ---
 
 ## Features
 
-- **Automatic OCR question detection**  
-  Reads the question directly from your screen (even partial or fuzzy text).
+- **OCR question detection** – Reads fuzzy or partial on-screen text.
+- **Headless search** – Queries DuckDuckGo and fetches matching itexamanswers pages silently.
+- **Accurate answer extraction** – Works even if the site layout changes.
+- **Safe auto-clicking** – Clicks only inside the actual answer area, never the sidebar.
+- **Hotkey automation** – One key triggers the entire pipeline.
+- **Cooldown system** – Prevents accidental double-activation.
 
-- **Headless browser search**  
-  Searches DuckDuckGo invisibly in the background and opens the matching `itexamanswers.net` page.
-
-- **Robust answer extraction**  
-  Identifies correct answers even if the site layout shifts or formatting changes.
-
-- **Safe, accurate clicking**  
-  Clicks only inside the **actual question area**, avoiding the sidebar and other UI elements.
-
-- **Hotkey-driven automation**  
-  Press a key → the tool runs OCR → searches → extracts → finds → and clicks the correct answers.
-
-- **Built-in cooldown**  
-  Prevents repeated activation until the solver has completed a run.
-
-> ⚠️ Image-based questions are **not supported**.
+> ⚠️ Image-based questions are not supported.
 
 ---
 
 ## Usage
 
-1. Open your CCNA test window on screen.  
-2. Run `ccna_solver.exe` as administrator.  
-3. Use the hotkey to trigger the solver:
+1. Open your CCNA question on screen.  
+2. Run `ccna_solver.exe` (administrator recommended).  
+3. Press **NUMPAD 1** to:
+   - Capture the screen  
+   - OCR the question  
+   - Search online  
+   - Extract correct answers  
+   - Locate answers on screen  
+   - Click them automatically  
 
-   **Primary workflow:**  
-   - **NUMPAD 1** → Run the full pipeline  
-     - Capture screen  
-     - OCR the question  
-     - Search online  
-     - Extract correct answers  
-     - Locate them on your screen  
-     - Click them automatically  
-
-4. The process runs headlessly and quietly — no browser window appears.  
-5. A 2-second cooldown prevents accidental double triggers.
+The whole process runs quietly in the background.  
+A 2-second cooldown prevents retriggering.
 
 ---
 
@@ -53,26 +39,19 @@ Powered by OCR, a headless browser, and precise on-screen text matching.
 
 | Key          | Action                                                   |
 |--------------|-----------------------------------------------------------|
-| **NUMPAD 1** | Run OCR → search → extract answers → auto-click them     |
-| **NUMPAD 9** | Quit the program                                         |
+| **NUMPAD 1** | Full run: OCR → search → extract → auto-click            |
 
 ---
 
-## Notes
+## Requirements / Notes
 
-- Must be run with **Administrator privileges** to enable global input control and off-focus clicking.  
-- Designed for Windows; tested on 1920×1080.  
-- Uses `pydirectinput` (or pyautogui if configured) to allow clicking even when the console is out of view.  
-- Does **not** click sidebar results or unrelated UI elements — only the true answer region.
-
----
-
-## Legacy
-
-Created to eliminate endless CCNA busywork and provide fast, reliable practice automation.
+- Windows recommended; tested on 1920×1080.  
+- Requires admin rights for global hotkeys and off-focus clicking.  
+- Uses `pydirectinput` for reliable input injection.  
+- Avoids sidebar content and unrelated UI elements.
 
 ---
 
 ## Disclaimer
 
-This tool is intended for personal learning and study assistance. Use responsibly.
+This tool is for personal study assistance only. Use responsibly.
