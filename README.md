@@ -2,7 +2,6 @@
 
 A fully automated tool that **reads CCNA questions from your screen, searches for answers online, and clicks the correct choices for you.**  
 Powered by OCR, a headless browser, and precise on-screen text matching.  
-Still hated by Markovich since 2025.
 
 ---
 
